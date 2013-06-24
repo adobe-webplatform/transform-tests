@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script type="text/javascript" src="jquery-2.0.2.min.js"></script>
+  <script>
+function init() {
+  var tests = [
+    'transforms-no-preserve-3d-001',
+    'transforms-no-preserve-3d-002',
+    'transforms-no-preserve-3d-003',
+    'transforms-no-preserve-3d-004',
+    'transforms-no-preserve-3d-005',
+    'transforms-no-preserve-3d-006',
+    'transforms-no-preserve-3d-007',
+    'transforms-no-preserve-3d-008',
+    'transforms-no-preserve-3d-009',
+    'transforms-no-preserve-3d-010',
+    'transforms-no-preserve-3d-011',
+    'transforms-no-preserve-3d-012',
+    'transforms-no-preserve-3d-013',
+    'transforms-no-preserve-3d-014',
+    'transforms-preserve-3d-001',
+    'transforms-preserve-3d-002',
+    'transforms-preserve-3d-003',
+    'transforms-preserve-3d-004',
+    'transforms-preserve-3d-005',
+    'transforms-preserve-3d-006',
+    'transforms-preserve-3d-007',
+    'transforms-preserve-3d-intersection-001',
+    'transforms-preserve-3d-intersection-002',
+    'transforms-preserve-3d-intersection-003',
+    'transforms-preserve-3d-intersection-004'
+  ];
+  var browsers = ['Safari', 'Firefox', 'Chrome', 'IE'];
+  for (var i = 0; i < browsers.length; i++)
+    $('#list').append('<td>'+browsers[i]+'</td>');
+  for (var i = 0; i < tests.length; i++) {
+    var test = '<tr><td><a href="'+tests[i]+'.html">'+tests[i]+'</td>';
+    test += '<td><iframe src="'+tests[i]+'.html" width="250" height="280"></iframe></td>';
+    for (var j = 0; j < browsers.length; j++)
+      test += '<td><img src="'+browsers[j]+'/'+tests[i]+'.png"></td>';
+    test += '</tr>';
+    $('#tests').append(test);
+  }
+}
+  </script>
+  <style>
+
+  </style>
+</head>
+<body onload="init()">
+<table>
+  <thead>
+    <tr id="list">
+      <td>Test file</td>
+      <td>Your browser</td>
+    </tr>
+  </thead>
+  <tbody id="tests">
+  </tbody>
+</body>
+</html>
