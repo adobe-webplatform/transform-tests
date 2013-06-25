@@ -25,12 +25,10 @@
         transform-style: preserve-3d;        
     }
     #S1 {
-        transform-style: preserve-3d;
-        transform: rotateY(45deg);
+        transform: translateZ(0px);
         background-color: red;
     }
     #S2 {
-        transform-style: preserve-3d;
         transform: translateZ(-20px);
         background-color: green;
     }
@@ -39,7 +37,7 @@
     <script type="text/javascript" src="prefixfree.min.js"></script>
 </head>
 <body>
-    <p>The test passes if there is a green rectangle and no other shape.</p>
+    <p>The test passes if there is a green rectangle and no red.</p>
     <span id="#INLINE">
         <div id="S1"></div>
         <div id="S2"></div>

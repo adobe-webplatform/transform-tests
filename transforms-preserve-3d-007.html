@@ -6,9 +6,10 @@
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-rendering">
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-3d-rendering">
     <link rel="match" href="reference/transforms-preserve-3d-ref.html">
-    <meta name="assert" content="The <span> is an initial containing block element. It sets
-    	a perspective.
-        The siblings S1 and S2 share the same 3D context.">
+    <meta name="assert" content="An block level element <span> is a child of an containing block.
+        The block level element <span> has two transformed child block elements with
+        transform-style: preserve-3d. The block level element <span> itself does not preserve 3D.
+        The siblings S1 and S2 do not have a 3D context.">
 
     <style type="text/css">
     div {
@@ -16,18 +17,15 @@
         height: 200px;
         position: absolute;
     }
-    #BLOCK {
+    #BE {
         display: block;
-        position: absolute;
-        perspective: 500px;       
+        transform-style: preserve-3d;
     }
     #S1 {
-        transform-style: preserve-3d;
         transform: translateZ(0px);
         background-color: green;
     }
     #S2 {
-        transform-style: preserve-3d;
         transform: translateZ(-20px);
         background-color: red;
     }
@@ -37,7 +35,7 @@
 </head>
 <body>
     <p>The test passes if there is a green rectangle and no red.</p>
-    <span id="#BLOCK">
+    <span id="BE">
         <div id="S1"></div>
         <div id="S2"></div>
     </span>

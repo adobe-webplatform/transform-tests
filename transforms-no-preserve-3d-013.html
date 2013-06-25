@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CSS Transforms: No preserve 3D on containing block 5</title>
+    <title>CSS Transforms: No preserve 3D on containing block 13</title>
     <link rel="author" title="Dirk Schulze" href="mailto:dschulze@adobe.com">
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-rendering">
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-3d-rendering">
     <link rel="match" href="reference/transforms-preserve-3d-ref.html">
-    <meta name="assert" content="An inline <span> is a child of an initial containing
-        block with no perspective. The inline <span> has two transformed block
-        elements with transform-style: preserve-3d. The inline <span> is sibling of a
-        containing block (<p>) and therefore gets added to an anonymous block which does
-        not preserve 3D.
-        The siblings S1 and S2 do not have a 3D context.">
+    <meta name="assert" content="Two siblings as childs of a block level element (no intital
+        containing block) without preserved 3D and no perspective. The parent block level
+        element defines the perspective.
+        The siblings S1 and S2 do not have or share a 3D context.">
 
     <style type="text/css">
     div {
         width: 200px;
         height: 200px;
         position: absolute;
+        transform-style: flat;
+    }
+    .BLOCK {
+        perspective: 0px;
     }
     #S1 {
-        transform-style: preserve-3d;
-        transform: rotateY(45deg);
+        transform: translateZ(20px);
         background-color: red;
     }
     #S2 {
-        transform-style: preserve-3d;
-        transform: translateZ(-20px);
+        transform: translateZ(0px);
         background-color: green;
     }
     </style>
@@ -35,9 +35,11 @@
 </head>
 <body>
     <p>The test passes if there is a green rectangle and no red.</p>
-    <span>
+    <div class="BLOCK">
         <div id="S1"></div>
+    </div>
+    <div class="BLOCK">
         <div id="S2"></div>
-    </span>
+    </div>
 </body>
 </html>

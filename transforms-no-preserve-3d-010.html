@@ -6,29 +6,27 @@
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-rendering">
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-3d-rendering">
     <link rel="match" href="reference/transforms-preserve-3d-ref.html">
-    <meta name="assert" content="Two siblings as childs of a block level element (no intital
-        containing block) without preserved 3D and no perspective. The parent block level
-        element defines the perspective. The second of the two siblings has a 3D translation.
-        The siblings S1 and S2 do not have or share a 3D context.">
+    <meta name="assert" content="Two siblings as childs of an initial containing block.
+        The initial containing block defines the perspective. The first sibling preseves
+        3D and has a 3D rotation. The second flattens and has no rotation.
+        The siblings S1 and S2 do have a 3D context and they share the 3D context.">
 
     <style type="text/css">
     div {
         width: 200px;
         height: 200px;
-        transform-style: flat;
+        position: absolute;
     }
-    #BLOCK {
-        perspective: 500px;
+    #CB {
+        perspective: 0px;
+        transform-style: preserve-3d;
     }
     #S1 {
-        position: absolute;
-        transform: translateZ(0px);
-        background-color: red;
+        background-color: green;
     }
     #S2 {
-        position: absolute;
+        background-color: red;
         transform: translateZ(-20px);
-        background-color: green;
     }
     </style>
 
@@ -36,11 +34,9 @@
 </head>
 <body>
     <p>The test passes if there is a green rectangle and no red.</p>
-    <div id="BLOCK">
-        <div>
-            <div id="S1"></div>
-            <div id="S2"></div>
-        </div>
+    <div id="CB">
+        <div id="S1"></div>
+        <div id="S2"></div>
     </div>
 </body>
 </html>

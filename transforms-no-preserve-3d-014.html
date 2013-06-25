@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CSS Transforms: Preserve 3D on containing block 1</title>
+    <title>CSS Transforms: No preserve 3D on containing block 14</title>
     <link rel="author" title="Dirk Schulze" href="mailto:dschulze@adobe.com">
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-rendering">
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-3d-rendering">
@@ -18,11 +18,11 @@
         position: absolute;
     }
     #CB {
-        perspective: 500px;
+        perspective: 0px;
     }
     #S1 {
         transform-style: flat;
-        transform: rotateY(45deg);
+        transform: translateZ(20px);
         background-color: red;
     }
     #S2 {
