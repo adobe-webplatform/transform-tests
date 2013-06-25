@@ -6,13 +6,12 @@
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-rendering">
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-3d-rendering">
     <link rel="match" href="reference/transforms-preserve-3d-ref.html">
-    <meta name="assert" content="An inline <span> is a child of an initial containing
-        block with no perspective. The inline <span> has two transformed block
-        elements with transform-style: preserve-3d. The inline <span> is sibling of a
-        containing block (<p>) and therefore gets added to an anonymous block which does
-        not preserve 3D. A value of transform-style: preserve-3d on the inline <span> has
-        not affect on its anonymous block. (See also test transforms-preserve-3d-008.html.)
-        The siblings S1 and S2 do not have a 3D context.">
+    <meta name="assert" content="An inline <span> element has two transformed block.
+        The inline <span> element is sibling to an containing block (<p>) and therefore
+        gets added to an anonymous block.
+        The inline <span> element is not transformable but has the transform style set.
+        This property has no affect on inline elements.
+        The siblings S1 and S2 DO NOT render in a 3D context.">
 
     <style type="text/css">
     div {

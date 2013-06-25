@@ -6,10 +6,11 @@
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-rendering">
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-3d-rendering">
     <link rel="match" href="reference/transforms-preserve-3d-ref.html">
-    <meta name="assert" content="Two siblings as childs of a block level element (no intital
-        containing block) without preserved 3D and no perspective. The parent block level
-        element defines the perspective.
-        The siblings S1 and S2 do not have a 3D context.">
+    <meta name="assert" content="Two siblings as children of a block level element (no intital
+        containing block). The block level element does not specify transform style or a
+        perspective. The block level element is a child of another block element which does
+        specify a perspective.
+        The siblings S1 and S2 DO NOT render in a 3D context.">
 
     <style type="text/css">
     div {

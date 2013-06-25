@@ -6,10 +6,10 @@
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-rendering">
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-3d-rendering">
     <link rel="match" href="reference/transforms-preserve-3d-ref.html">
-    <meta name="assert" content="Two siblings as childs of an initial containing block.
-        The initial containing block defines the perspective. The first sibling preseves
-        3D and has a 3D rotation. The second flattens and has no rotation.
-        The siblings S1 and S2 do have a 3D context and they share the 3D context.">
+    <meta name="assert" content="Two siblings as children of an containing block.
+        The containing block defines the perspective of 0 and the transform style preserve-3d.
+        The first sibling has a transform, the second does not have a transform.
+        The siblings S1 and S2 DO share the 3D context.">
 
     <style type="text/css">
     div {

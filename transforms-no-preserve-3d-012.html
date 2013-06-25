@@ -6,10 +6,12 @@
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-rendering">
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-3d-rendering">
     <link rel="match" href="reference/transforms-preserve-3d-ref.html">
-    <meta name="assert" content="Two siblings as childs of a block level element (no intital
-        containing block) without preserved 3D and no perspective. The parent block level
-        element defines the perspective.
-        The siblings S1 and S2 do not have or share a 3D context.">
+    <meta name="assert" content="Two sibling containing blocks preserve 3D. The shared
+        containing block does not preserve 3D. Each sibling containing block has a
+        transformed containing block.
+        The siblings S1 and S2 DO NOT share a 3D context.
+        See 'Elements establish and participate in 3D rendering contexts as follows'
+        point 1.">
 
     <style type="text/css">
     div {
