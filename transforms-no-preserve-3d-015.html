@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Transforms: No preserve 3D on containing block 14</title>
+    <link rel="author" title="Dirk Schulze" href="mailto:dschulze@adobe.com">
+    <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-rendering">
+    <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-3d-rendering">
+    <link rel="match" href="reference/transforms-preserve-3d-ref.html">
+    <meta name="assert" content="Two siblings as childs of an containing block.
+        The containing block defines the perspective and preserves 3D.
+        The inline <span> element gets added to an anonymous block.
+        S1 gets flattened and DOES NOT share the 3D context with S2.">
+
+    <style type="text/css">
+    div {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+    }
+    #CB {
+        perspective: 0px;
+        transform-style: preserve-3d;
+    }
+    #S1 {
+        background-color: red;
+    }
+    #S2 {
+        transform: translateZ(-20px);
+        background-color: green;
+    }
+    </style>
+
+    <script type="text/javascript" src="prefixfree.min.js"></script>
+</head>
+<body>
+    <p>The test passes if there is a green rectangle and no red.</p>
+    <div id="CB">
+        <span><div id="S1"></div></span>
+        <div id="S2"></div>
+    </div>
+</body>
+</html>
